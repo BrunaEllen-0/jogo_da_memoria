@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Jogo da Memória - 2 Jogadores</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>🧠 Jogo da Memória</h1>
+        <p id="status-vez" class="status-vez">Vez do Jogador 1</p>
+    </header>
 
+    <section class="contador">
+        <div class="contador-texto turno-azul" id="placar-j1">
+            <span>Jogador 1</span>
+            <strong id="pontos-j1">0</strong>
+        </div>
+        <div class="contador-texto" id="placar-j2">
+            <span>Jogador 2</span>
+            <strong id="pontos-j2">0</strong>
+        </div>
+    </section>
+
+    <main class="tabuleiro" id="tabuleiro"></main>
+
+    <!-- Área que aparece apenas no fim da partida -->
+    <section id="fim-jogo" class="fim-jogo escondido">
+        <h2 id="mensagem-resultado"></h2>
+        <button id="btn-reiniciar" class="btn-reiniciar">Jogar novamente</button>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
