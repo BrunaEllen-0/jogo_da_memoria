@@ -7,28 +7,63 @@
     <title>Jogo da Memória - 2 Jogadores</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <h1>🧠 Jogo da Memória</h1>
-        <p id="status-vez" class="status-vez">Vez do Jogador 1</p>
-    </header>
 
-    <section class="contador">
-        <div class="contador-texto turno-azul" id="placar-j1">
-            <span>Jogador 1</span>
-            <strong id="pontos-j1">0</strong>
+    <!-- TELA INICIAL -->
+    <section id="tela-inicio" class="tela-inicio">
+        <div class="icone-logo">🧠</div>
+        <h1>Jogo da Memória</h1>
+        <p class="subtitulo">Desafio para 2 Jogadores • 8 Pares</p>
+
+        <div class="campo-grupo">
+            <label for="input-j1">Nome do Jogador 1 (Azul):</label>
+            <input type="text" id="input-j1" placeholder="Jogador 1" maxlength="15">
         </div>
-        <div class="contador-texto" id="placar-j2">
-            <span>Jogador 2</span>
-            <strong id="pontos-j2">0</strong>
+
+        <div class="campo-grupo">
+            <label for="input-j2">Nome do Jogador 2 (Vermelho):</label>
+            <input type="text" id="input-j2" placeholder="Jogador 2" maxlength="15">
         </div>
+
+        <div class="campo-grupo">
+            <label>Tema das Cartas:</label>
+            <div class="temas">
+                <button type="button" class="btn-tema ativo" data-tema="misto">🎲 Misto</button>
+                <button type="button" class="btn-tema" data-tema="espaco">🚀 Espaço</button>
+                <button type="button" class="btn-tema" data-tema="comida">🍕 Comida</button>
+            </div>
+        </div>
+
+        <button id="btn-iniciar" class="btn-principal">Iniciar Partida</button>
     </section>
 
-    <main class="tabuleiro" id="tabuleiro"></main>
+    <!-- TELA DO JOGO -->
+    <section id="tela-jogo" class="tela-jogo escondido">
+        <header class="cabecalho">
+            <h1>🧠 Jogo da Memória</h1>
+            <p id="status-vez" class="status-vez">Vez do Jogador 1</p>
+        </header>
 
-    <!-- Área que aparece apenas no fim da partida -->
-    <section id="fim-jogo" class="fim-jogo escondido">
-        <h2 id="mensagem-resultado"></h2>
-        <button id="btn-reiniciar" class="btn-reiniciar">Jogar novamente</button>
+        <div class="contador">
+            <div class="contador-texto turno-azul" id="placar-j1">
+                <span id="nome-j1">Jogador 1</span>
+                <strong id="pontos-j1">0</strong>
+            </div>
+            <div class="contador-texto" id="placar-j2">
+                <span id="nome-j2">Jogador 2</span>
+                <strong id="pontos-j2">0</strong>
+            </div>
+        </div>
+
+        <main class="tabuleiro" id="tabuleiro"></main>
+
+        <!-- Resultado final -->
+        <div id="fim-jogo" class="fim-jogo escondido">
+            <h2 id="mensagem-resultado"></h2>
+            <div class="botoes-fim">
+                <button id="btn-reiniciar" class="btn-principal">Jogar novamente</button>
+                <button id="btn-menu" class="btn-secundario">Voltar ao Menu</button>
+            </div>
+        </div>
     </section>
 
     <script src="index.js"></script>
